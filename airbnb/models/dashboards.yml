@@ -1,0 +1,15 @@
+exposures:
+  - name: executive_dashboard
+    label: Executive Dashboard
+    type: dashboard
+    maturity: low
+    url: https://5a9c8e47.us2a.app.preset.io/superset/dashboard/9/?native_filters_key=xdoDhA7-lNcX9iTd7b2eMA
+    description: Executive Dashboard about Airbnb listings and hosts
+
+    depends_on:
+      - ref('dim_listings_w_hosts')
+      - ref('mart_fullmoon_reviews')
+
+    owner:
+      name: John Zevgolis
+      email: zevgolis.ioannis@gmail.com
