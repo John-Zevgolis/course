@@ -1,0 +1,3 @@
+$env:SNOWFLAKE_ACCOUNT="MYKZMRC-BA15965"
+$env:DBT_USER="dbt"
+$env:DBT_PRIVATE_KEY_PATH="C:/Users/Lenovo/rsa_key.p8"
