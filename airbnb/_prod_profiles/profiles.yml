@@ -7,7 +7,7 @@ airbnb:
 
       role: TRANSFORM
       authenticator: snowflake_jwt
-      private_key_path: "{{ env_var('DBT_PRIVATE_KEY_PATH', 'C:/Users/Lenovo/rsa_key.p8') }}"
+      private_key: "{{ env_var('DBT_PRIVATE_KEY') }}"
 
       database: AIRBNB
       schema: STAGING
@@ -20,7 +20,7 @@ airbnb:
 
       role: TRANSFORM
       authenticator: snowflake_jwt
-      private_key_path: "{{ env_var('DBT_PRIVATE_KEY_PATH', 'C:/Users/Lenovo/rsa_key.p8') }}"
+      private_key: "{{ env_var('DBT_PRIVATE_KEY') }}"
 
       database: AIRBNB
       schema: PROD
@@ -33,7 +33,7 @@ airbnb:
 
       role: TRANSFORM
       authenticator: snowflake_jwt
-      private_key_path: "{{ env_var('DBT_PRIVATE_KEY_PATH', 'C:/Users/Lenovo/rsa_key.p8') }}"
+      private_key: "{{ env_var('DBT_PRIVATE_KEY') }}"
 
       database: AIRBNB
       schema: "DBT_{{ env_var('DBT_ENV_NAME') | upper | trim }}"
