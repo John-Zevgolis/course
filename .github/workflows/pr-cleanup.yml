@@ -20,18 +20,16 @@ jobs:
       github.repository != 'zoltanctoth/complete-dbt-bootcamp-zero-to-hero'
     runs-on: ubuntu-latest
     env:
-      SNOWFLAKE_ACCOUNT:      "${{ secrets.SNOWFLAKE_ACCOUNT }}"
-      DBT_USER:               "${{ secrets.DBT_USER }}"
-      PRIVATE_KEY: |
-        ${{ secrets.PRIVATE_KEY }}
-      PRIVATE_KEY: "${{ secrets.PRIVATE_KEY }}"
+      SNOWFLAKE_ACCOUNT: '${{ secrets.SNOWFLAKE_ACCOUNT }}'
+      DBT_USER: '${{ secrets.DBT_USER }}'
+      DBT_PRIVATE_KEY: '${{ secrets.DBT_PRIVATE_KEY }}'
 
     steps:
       - uses: actions/checkout@v6
       - uses: astral-sh/setup-uv@v7
         with:
           enable-cache: true
-          cache-dependency-glob: "pyproject.toml"
+          cache-dependency-glob: 'pyproject.toml'
       - run: uv python install 3.13
       - run: uv sync
       - name: Set DBT_ENV_NAME from merged branch (uppercase, _ for / and -)
